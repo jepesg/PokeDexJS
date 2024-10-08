@@ -12,10 +12,10 @@ function convertListToHtml(pokemon) {
 
             <div class="detail">
                 <ol id ="pokemonList" class="types">
-                    ${pokemon.types.map((type) => `<li class="type">${type}</li>`).join('')}
+                    ${pokemon.types.map((type) => `<li class="type${type}">${type}</li>`).join('')}
                 </ol>
                 <img src=${pokemon.photo}
-                alt="${pokemon.name}">
+                    alt="${pokemon.name}">
             </div>
         </li>
 `
@@ -34,7 +34,7 @@ function loadPokemonItens(offset, limit) {
 loadMoreButton(offset, limit)
 
 loadMoreButton.addEventListener('click', () => {
-    offset = + limit
+    offset += limit
     const qtdRecordNextPage = offset + limit
     if (qtdRecordNextPage >= maxRecords) {
         const newLimit = qtdRecordNextPage - maxRecords
