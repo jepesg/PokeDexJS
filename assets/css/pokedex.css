@@ -110,6 +110,8 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    color: gray;
+    border-radius: 1rem;
 }
 
 .pokemon .detail .types .type {
